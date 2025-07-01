@@ -38,7 +38,9 @@
 
 <img src="assets/image-20250629020839182.png" alt="image-20250629020839182" style="zoom:80%;" />  
 
-<img src="assets/image-20250629020548673.png" alt="image-20250629020548673" style="zoom:80%;" />  
+<img src="assets/image-20250630104917858.png" alt="image-20250630104917858" style="zoom:67%;" /> 
+
+<img src="assets/image-20250629020548673.png" alt="image-20250629020548673" style="zoom: 67%;" />  
 
 ### ssh-keygen
 
@@ -61,3 +63,7 @@
 <img src="assets/image-20250629021623459.png" alt="image-20250629021623459" style="zoom:67%;" /> 
 
 <img src="assets/image-20250629021707211.png" alt="image-20250629021707211" style="zoom:67%;" /> 
+
+### tmux（terminal multiplexer）
+
+![image-20250630120115840](assets/image-20250630120115840.png)  

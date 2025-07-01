@@ -153,3 +153,66 @@
 ## Scipy
 
 <img src="assets\image-20250403233321382.png" alt="image-20250403233321382" style="zoom:67%;" /> 
+
+## Json
+
+<img src="assets/image-20250630183145677.png" alt="image-20250630183145677" style="zoom:67%;" />  
+
+![image-20250630183412253](assets/image-20250630183412253.png) 
+
+![image-20250630183447202](assets/image-20250630183447202.png) 
+
+## GIL
+
+**Global Interpreter Lock** **全局解释器锁**
+
+![image-20250630201015632](assets/image-20250630201015632.png) 
+
+![image-20250630201209469](assets/image-20250630201209469.png) 
+
+## asyncio
+
+<img src="assets/image-20250630124421556.png" alt="image-20250630124421556" style="zoom:67%;" /> 
+
+### asyncio.gather()
+
+![image-20250630125210967](assets/image-20250630125210967.png)  
+
+### loop.run_in_executor()
+
+<img src="assets/image-20250630135800807.png" alt="image-20250630135800807" style="zoom: 67%;" /> 
+
+<img src="assets/image-20250630135847512.png" alt="image-20250630135847512" style="zoom:67%;" /> 
+
+```python
+def sync_read_file(file_path: str) -> str:
+    # 同步阻塞的函数
+    for i in range(3):
+        time.sleep(1)
+        print(f"Reading file {file_path} {i}")
+    return file_path
+
+async def async_read_file(loop: asyncio.AbstractEventLoop, file_path: str) -> str:
+    # 提交同步任务到线程池，返回 Future
+    future = loop.run_in_executor(None, sync_read_file, file_path)
+    return await future
+
+async def main():
+    loop = asyncio.get_event_loop()
+    t1 = loop.run_in_executor(None, sync_read_file, "file1.txt")
+    t2 = loop.run_in_executor(None, sync_read_file, "file2.txt")
+    t3 = asyncio.to_thread(sync_read_file, "file3.txt")
+    t4 = asyncio.to_thread(sync_read_file, "file4.txt")
+    t5 = async_read_file(loop, "file5.txt")
+    t6 = async_read_file(loop, "file6.txt")
+    await asyncio.gather(t1, t2, t3, t4, t5, t6)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+### asyncio.to_thread()
+
+![image-20250630203123897](assets/image-20250630203123897.png) 
+
+![image-20250630201634323](assets/image-20250630201634323.png) 
