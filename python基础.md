@@ -154,6 +154,40 @@
 
 <img src="assets\image-20250403233321382.png" alt="image-20250403233321382" style="zoom:67%;" /> 
 
+### scipy.stats.norm.cdf()
+
+![image-20250701170643734](assets/image-20250701170643734.png) 
+
+```python
+from scipy.stats import norm
+
+# 标准正态分布（μ=0, σ=1）
+print(norm.cdf(0))    # 输出 0.5（均值处累积概率为50%）
+print(norm.cdf(1.96)) # 输出约 0.975（约97.5%的概率小于1.96）
+print(norm.cdf(-1))   # 输出约 0.1587（约15.87%的概率小于-1）
+
+# 非标准正态分布（μ=5, σ=2）
+print(norm.cdf(7, loc=5, scale=2))  # 等价于标准正态分布的Z=(7-5)/2=1，输出约0.8413
+```
+
+### scipy.stats.norm.ppf()
+
+![image-20250701170824849](assets/image-20250701170824849.png) 
+
+```python
+from scipy.stats import norm
+
+# 标准正态分布（μ=0, σ=1）
+print(norm.ppf(0.5))    # 输出 0（50%分位数是均值）
+print(norm.ppf(0.975))  # 输出约 1.96（97.5%分位数，常用置信水平）
+print(norm.ppf(0.025))  # 输出约 -1.96（2.5%分位数）
+
+# 非标准正态分布（μ=5, σ=2）
+print(norm.ppf(0.8413, loc=5, scale=2))  # 等价于Z=1时的x值，输出7（因为Φ(1)=0.8413）
+```
+
+![image-20250701171022576](assets/image-20250701171022576.png) 
+
 ## Json
 
 <img src="assets/image-20250630183145677.png" alt="image-20250630183145677" style="zoom:67%;" />  

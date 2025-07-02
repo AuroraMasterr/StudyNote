@@ -67,3 +67,25 @@
 ### tmux（terminal multiplexer）
 
 ![image-20250630120115840](assets/image-20250630120115840.png)  
+
+### ps（process status）
+
+![image-20250701151612892](assets/image-20250701151612892.png)
+
+<img src="assets/image-20250701150319157.png" alt="image-20250701150319157" style="zoom:50%;" /> 
+
+<img src="assets/image-20250701152138669.png" alt="image-20250701152138669" style="zoom:50%;" /> 
+
+<img src="assets/image-20250701152208462.png" alt="image-20250701152208462" style="zoom:67%;" /> 
+
+### vim
+
+![image-20250701152409557](assets/image-20250701152409557.png) 
+
+### mv
+
+![image-20250701152820568](assets/image-20250701152820568.png) 
+
+### cp
+
+![image-20250701152858056](assets/image-20250701152858056.png)
