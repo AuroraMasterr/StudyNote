@@ -110,9 +110,9 @@
 
 <img src="assets\image-20250403233257800.png" alt="image-20250403233257800" style="zoom:67%;" /> 
 
-### clamp()
+### clamp()/clip()
 
-<img src="assets\image-20250403233746879.png" alt="image-20250403233746879" style="zoom:50%;" /> 
+<img src="assets\image-20250403233746879.png" alt="image-20250403233746879" style="zoom: 67%;" /> 
 
 ### transpose
 
@@ -137,6 +137,39 @@
 ### torch.mm / bmm / matmul
 
 <img src="assets\image-20250403234044184.png" alt="image-20250403234044184" style="zoom:67%;" /> 
+
+### torch.outer()
+
+<img src="assets/image-20250715170041314.png" alt="image-20250715170041314" style="zoom: 50%;" /> 
+
+```python
+# 定义两个向量
+a = torch.tensor([1, 2, 3])
+b = torch.tensor([4, 5])
+
+# 计算外积
+result = torch.outer(a, b)
+# tensor([[ 4,  5],
+#         [ 8, 10],
+#         [12, 15]])
+```
+
+### torch.polar
+
+<img src="assets/image-20250715173620685.png" alt="image-20250715173620685" style="zoom: 50%;" /> 
+
+<img src="assets/image-20250715173737349.png" alt="image-20250715173737349" style="zoom:50%;" /> 
+
+ ```python
+ # 定义模和相角
+ magnitude = torch.tensor([1.0, 2.0])
+ angle = torch.tensor([0.0, math.pi / 2])
+ 
+ # 转换为复数
+ complex_result = torch.polar(magnitude, angle)
+ # 输出:
+ # tensor([1.0000e+00 + 0.0000j, 0.0000e+00 + 2.0000j])
+ ```
 
 ### register_buffer / nn.Parameter
 
@@ -195,6 +228,10 @@ print(norm.ppf(0.8413, loc=5, scale=2))  # 等价于Z=1时的x值，输出7（�
 ![image-20250630183412253](assets/image-20250630183412253.png) 
 
 ![image-20250630183447202](assets/image-20250630183447202.png) 
+
+## datetime
+
+
 
 ## GIL
 
