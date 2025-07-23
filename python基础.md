@@ -36,6 +36,17 @@
 
 <img src="assets\image-20250410170929827.png" alt="image-20250410170929827" style="zoom:67%;" />  
 
+## Pandas
+
+### 取消输出限制
+
+```python
+pd.set_option('display.max_rows', None)  # 显示所有行
+pd.set_option('display.max_columns', None)  # 显示所有列
+pd.set_option('display.width', None)  # 不限制显示宽度
+pd.set_option('display.max_colwidth', None)  # 不限制列宽度
+```
+
 ## numpy
 
 <img src="assets\image-20250411025845045.png" alt="image-20250411025845045" style="zoom:67%;" /> 
