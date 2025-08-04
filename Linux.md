@@ -2,6 +2,10 @@
 
 ### du（disk usage）
 
+```
+du -h --max-depth=1	[path]		# 统计[path]一级子目录的磁盘占用
+```
+
 <img src="assets/image-20250629014922305.png" alt="image-20250629014922305" style="zoom:67%;" /> 
 
 <img src="assets/image-20250629014949953.png" alt="image-20250629014949953" style="zoom:67%;" /> 
@@ -30,6 +34,10 @@
 
 ### rsync（remote sync）
 
+```
+rsync -avz --progress [source] [destination]	# 以压缩状态传输，并且显示传输进度
+```
+
 <img src="assets/image-20250629020149298.png" alt="image-20250629020149298" style="zoom:80%;" /> 
 
 <img src="assets/image-20250629020625112.png" alt="image-20250629020625112" style="zoom:80%;" />  
@@ -54,8 +62,6 @@
 
 <img src="assets/image-20250629022300777.png" alt="image-20250629022300777" style="zoom:80%;" /> 
 
- 
-
 ### cat（concatenate）
 
 <img src="assets/image-20250629021549530.png" alt="image-20250629021549530" style="zoom:67%;" /> 
@@ -65,6 +71,12 @@
 <img src="assets/image-20250629021707211.png" alt="image-20250629021707211" style="zoom:67%;" /> 
 
 ### tmux（terminal multiplexer）
+
+```
+tmux ls 	# 查看当前所有会话
+tmux new -s <session-name>			# 创建新会话<session-name>
+tmux attach -t <session-name>		# 连接到会话<session-name>
+```
 
 ![image-20250630120115840](assets/image-20250630120115840.png)  
 
@@ -82,15 +94,23 @@
 
 ![image-20250701152409557](assets/image-20250701152409557.png) 
 
-### mv
+### mv（move file）
 
 ![image-20250701152820568](assets/image-20250701152820568.png) 
 
-### cp
+### cp（copy file）
 
 ![image-20250701152858056](assets/image-20250701152858056.png)
 
-## git
+### rm（remove）
+
+```
+rm -rf [dir-name]	# 强制删除目录[dir-name]	(删除目录必须加-r)
+```
+
+<img src="assets/image-20250802150958221.png" alt="image-20250802150958221" style="zoom: 80%;" /> 
+
+## Git
 
 ### commit
 
@@ -98,7 +118,50 @@
 git commit -m [message]			# 提交暂存区到本地仓库中
 ```
 
+### checkout
 
+```
+git checkout <branch-name>		# 切换到分支<branch-name>
+git checkout -b <new-branch-name>	 # 创建新分支并切换
+git checkout <commit-hash>		# 切换到特定的提交状态，进入"分离头指针"状态，只能查看历史记录，而不能进行分支操作。
+```
+
+### push
+
+```
+git push <远程主机名> <本地分支名>:<远程分支名>	# 把本地的分支<本地分支名>推送到主机<远程主机名>的分支<远程分支名>上
+git push -u <远程主机名> <本地分支名>		       # 推送的时候设置上游分支，新分支首次推送到远程时使用
+git push origin --delete <branch-name>		  # 删除远程分支 <branch-name>
+```
+
+- 克隆一个项目的时候，git 会自动帮我们把远程主机起名为 `origin`
+- 本地分支名和远程分支名一致时，简写为 `git push <远程主机名> <本地分支名> `
+
+### branch
+
+```
+git branch				# 查看所有本地分支
+git branch -r			# 查看所有远程分支
+git branch -a			# 查看所有本地和远程分支
+git branch -d <branch-name>		# 删除本地分支<branch-name>
+```
+
+### stash
+
+```
+git stash				# 临时保存当前工作目录的更改
+git stash list  		# 查看存储的进度
+git stash apply			# 应用最近一次存储的进度
+git stash pop			# 应用并删除最近一次存储的进度
+git stash clear			# 清空所有存储
+```
+
+### merge
+
+```
+git merge <branch-name>			# 把<branch-name>分支的更改合并到当前分支
+git --no-ff merge <branch-name>		# 禁用快进合并，强制创建一个合并的 commit，保留合并历史
+```
 
 ## NVIDIA 驱动安装
 
