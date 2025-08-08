@@ -146,6 +146,14 @@ git branch -a			# 查看所有本地和远程分支
 git branch -d <branch-name>		# 删除本地分支<branch-name>
 ```
 
+### reset
+
+```
+git reset --soft HEAD~1			# 撤销最近一次commit，保留修改
+```
+
+
+
 ### stash
 
 ```
@@ -154,6 +162,8 @@ git stash list  		# 查看存储的进度
 git stash apply			# 应用最近一次存储的进度
 git stash pop			# 应用并删除最近一次存储的进度
 git stash clear			# 清空所有存储
+git stash show -p <stash-name>		# 查看某个 stash 的详细内容
+git stash show -p stash@{0}		# 查看最近一次 stash 的详细内容
 ```
 
 ### merge
