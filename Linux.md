@@ -90,10 +90,6 @@ tmux attach -t <session-name>		# 连接到会话<session-name>
 
 <img src="assets/image-20250701152208462.png" alt="image-20250701152208462" style="zoom:67%;" /> 
 
-### vim
-
-![image-20250701152409557](assets/image-20250701152409557.png) 
-
 ### mv（move file）
 
 ![image-20250701152820568](assets/image-20250701152820568.png) 
@@ -110,6 +106,26 @@ rm -rf [dir-name]	# 强制删除目录[dir-name]	(删除目录必须加-r)
 
 <img src="assets/image-20250802150958221.png" alt="image-20250802150958221" style="zoom: 80%;" /> 
 
+## 文档编辑
+
+### vim
+
+![image-20250701152409557](assets/image-20250701152409557.png) 
+
+### sort
+
+```
+sort [file-name]				# 把文件的所有行按照第一列的ASCII码排序
+sort -h [file-name]			# 如果第一列是人类可读的数值，则按照第一列的人类可读数值排序
+sort -k 2 [file-name]		# 按照第二列排序
+```
+
+- Linux sort 命令用于将文本文件内容加以排序。
+
+  sort 可针对文本文件的内容，以行为单位来排序。
+
+<img src="assets/image-20250811141902218.png" alt="image-20250811141902218" style="zoom:50%;" /> 
+
 ## Git
 
 ### commit
@@ -122,7 +138,7 @@ git commit -m [message]			# 提交暂存区到本地仓库中
 
 ```
 git checkout <branch-name>		# 切换到分支<branch-name>
-git checkout -b <new-branch-name>	 # 创建新分支并切换
+git checkout -b <new-branch-name>	 # 从当前分支创建一个新分支并切换
 git checkout <commit-hash>		# 切换到特定的提交状态，进入"分离头指针"状态，只能查看历史记录，而不能进行分支操作。
 ```
 
@@ -143,7 +159,8 @@ git push origin --delete <branch-name>		  # 删除远程分支 <branch-name>
 git branch				# 查看所有本地分支
 git branch -r			# 查看所有远程分支
 git branch -a			# 查看所有本地和远程分支
-git branch -d <branch-name>		# 删除本地分支<branch-name>
+git branch -d <branch-name>		# 删除本地分支<branch-name>, 该分支被合并后才能删除
+git branch -D <branch-name>		# 强制删除本地分支<branch-name>, 忽略任何未合并的更改
 ```
 
 ### reset
@@ -151,8 +168,6 @@ git branch -d <branch-name>		# 删除本地分支<branch-name>
 ```
 git reset --soft HEAD~1			# 撤销最近一次commit，保留修改
 ```
-
-
 
 ### stash
 
