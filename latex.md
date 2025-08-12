@@ -1,3 +1,35 @@
+
+
+## 二元符号
+
+远小于：\ll
+
+$\ll$ 
+
+远大于：\gg
+
+$\gg$
+
+恒等于：\equiv
+
+$\equiv$
+
+相似/服从于：\sim
+
+$\sim$
+
+点号：\cdot
+
+$\cdot$
+
+逐元素相加：\oplus
+
+$\oplus$
+
+逐元素相乘：\odot
+
+$\odot$
+
 ## 数学符号
 
 ### 强制下标位于正上/下方
@@ -16,28 +48,6 @@ $\overline{1234}$
 
 $\underline{1234}$
 
-### 远小/大于
-
-\ll
-
-$\ll$ 
-
-\gg
-
-$\gg$
-
-### 恒等于
-
-\equiv
-
-$\equiv$
-
-### 相似
-
-\sim
-
-$\sim$
-
 ### 箭头
 
 \Longrightarrow
@@ -51,6 +61,34 @@ $\rightarrow$
 \longleftrightarrow
 
 $\longleftrightarrow$
+
+### 等号对齐
+
+带编号：
+
+\begin{align}
+
+xxx &= xxx 
+
+\end{align}
+
+$\begin{align}a&=100\\&=200\end{align}$
+
+不带编号：
+
+\begin{align*}
+
+xxx &= xxx 
+
+\end{align*}
+
+$\begin{align*}a&=100\\&=200\end{align*}$
+
+### 梯度/倒三角
+
+\nabla
+
+$\nabla$
 
 ## 字体
 
@@ -71,3 +109,13 @@ $\mathbb{ERN}$：期望/实数域/自然数集
 \mathcal{}
 
 $\mathcal{LDN}$：损失函数/样本集/高斯分布
+
+## 希腊字母
+
+\alpha,  \beta, \gamma
+
+$\alpha,\beta,\gamma$
+
+\epsilon
+
+$\epsilon$
