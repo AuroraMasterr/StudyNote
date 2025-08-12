@@ -117,7 +117,8 @@ rm -rf [dir-name]	# 强制删除目录[dir-name]	(删除目录必须加-r)
 ```
 sort [file-name]				# 把文件的所有行按照第一列的ASCII码排序
 sort -h [file-name]			# 如果第一列是人类可读的数值，则按照第一列的人类可读数值排序
-sort -k 2 [file-name]		# 按照第二列排序
+sort -k [sort-index] [file-name]		# 按照第 sort-index 列排序
+sort -k 2 [file-name]		# 按照第 2 列排序
 ```
 
 - Linux sort 命令用于将文本文件内容加以排序。
@@ -203,7 +204,7 @@ apt list --installed | grep nvidia-fabricmanager
 卸载旧版本，安装新版本
 
 ```
-dpkg -r nvidia-fabricmanager-570   # 卸载旧版本NVIDIA-Fabric Manager
+dpkg -r nvidia-fabricmanager-570 		# 卸载旧版本NVIDIA-Fabric Manager
 dpkg -r nvidia-fabricmanager-dev-570    # 卸载旧版本Nvidia-Fabric-Manager-devel
 wget https://developer.download.nvidia.cn/compute/cuda/repos/ubuntu2004/x86_64/nvidia-fabricmanager-550_550.163.01-1_amd64.deb
 dpkg -i nvidia-fabricmanager-550_550.163.01-1_amd64.deb			# 安装目标版本
