@@ -1,3 +1,5 @@
+# 常用库和函数
+
 ## 语法
 
 <img src="assets\image-20250416001624861.png" alt="image-20250416001624861" style="zoom: 80%;" /> 
@@ -298,3 +300,42 @@ if __name__ == "__main__":
 ![image-20250630203123897](assets/image-20250630203123897.png) 
 
 ![image-20250630201634323](assets/image-20250630201634323.png) 
+
+# 装饰器
+
+## @property
+
+- 将类的方法转换为只读属性，在不改变类接口的情况提供一种方式访问计算出的属性。
+- 一般是只读的，如果需要修改，通过定义 @propertyName.setter 和 @propertyName.deleter 来控制属性的更改和删除。
+
+```python
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        if value < 0:
+            raise ValueError("Radius cannot be negative")
+        self._radius = value
+
+    @property
+    def area(self):
+        import math
+        return math.pi * (self._radius ** 2)
+
+# 使用示例
+c = Circle(5)
+print(c.radius)  # 5
+print(c.area)    # 78.53981633974483
+
+c.radius = 10
+print(c.area)    # 314.1592653589793
+
+# c.area = 200  # AttributeError: can't set attribute
+```
+
