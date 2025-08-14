@@ -90,6 +90,12 @@ $\begin{align*}a&=100\\&=200\end{align*}$
 
 $\nabla$
 
+### 偏导
+
+\partial
+
+$\partial$，$\frac{\partial y}{\partial x}$
+
 ## 字体
 
 ### 罗马体/正体
