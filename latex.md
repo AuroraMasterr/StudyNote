@@ -122,6 +122,10 @@ $\mathcal{LDN}$：损失函数/样本集/高斯分布
 
 $\alpha,\beta,\gamma$
 
-\epsilon
+\epsilon，\sigma，\delta
 
-$\epsilon$
+$\epsilon,\sigma,\delta$
+
+\Sigma，\Delta
+
+$\Sigma, \Delta$
