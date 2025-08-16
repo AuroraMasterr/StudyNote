@@ -339,3 +339,15 @@ print(c.area)    # 314.1592653589793
 # c.area = 200  # AttributeError: can't set attribute
 ```
 
+# Pytorch
+
+## 分布式训练
+
+### launch
+
+- 启动脚本
+
+```
+torch.distributed.launch
+```
+
