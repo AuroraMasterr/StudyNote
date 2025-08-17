@@ -30,6 +30,24 @@ $\oplus$
 
 $\odot$
 
+### 偏序
+
+偏序小于，按元素小于（preceed）：\prec
+
+$\prec$
+
+偏序小于等于，按元素小于等于：\preceq
+
+$\preceq$
+
+偏序大于，按元素大于（succeed）：\succ
+
+$\succ$
+
+偏序大于等于，按元素大于等于：\succeq
+
+$\succeq$
+
 ## 数学符号
 
 ### 强制下标位于正上/下方
@@ -118,14 +136,14 @@ $\mathcal{LDN}$：损失函数/样本集/高斯分布
 
 ## 希腊字母
 
-\alpha,  \beta, \gamma
+\alpha,  \beta，\gamma，\eta，\tau
 
-$\alpha,\beta,\gamma$
+$\alpha,\beta,\gamma,\eta,\tau$
 
-\epsilon，\sigma，\delta，\phi
+\epsilon，\sigma，\delta，\phi，\pi，\omega
 
-$\epsilon,\sigma,\delta,\phi$
+$\epsilon,\sigma,\delta,\phi,\pi,\omega$
 
-\Sigma，\Delta，\Phi
+\Sigma，\Delta，\Phi，\Pi
 
-$\Sigma, \Delta,\Phi$
+$\Sigma, \Delta,\Phi,\Pi$
