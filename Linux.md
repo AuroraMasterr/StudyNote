@@ -2,7 +2,7 @@
 
 ### du（disk usage）
 
-```
+```shell
 du -h --max-depth=1	[path]		# 统计[path]一级子目录的磁盘占用
 ```
 
@@ -34,11 +34,13 @@ du -h --max-depth=1	[path]		# 统计[path]一级子目录的磁盘占用
 
 ### rsync（remote sync）
 
-```
+```shell
 rsync -avz --progress [source] [destination]	# 以压缩状态传输，并且显示传输进度
 ```
 
-<img src="assets/image-20250629020149298.png" alt="image-20250629020149298" style="zoom:80%;" /> 
+- 用于本地计算机与远程计算机之间同步文件。不支持两台远程计算机之间的同步，需要在本地中转。
+- 可以当作文件复制命令代替 `cp`
+- `rsync` 会检查发送方和接收方已有的文件，仅传输有变动的部分（默认规则是文件大小或修改时间有变动）
 
 <img src="assets/image-20250629020625112.png" alt="image-20250629020625112" style="zoom:80%;" />  
 
@@ -100,7 +102,7 @@ tmux attach -t <session-name>		# 连接到会话<session-name>
 
 ### rm（remove）
 
-```
+```shell
 rm -rf [dir-name]	# 强制删除目录[dir-name]	(删除目录必须加-r)
 ```
 
@@ -114,7 +116,7 @@ rm -rf [dir-name]	# 强制删除目录[dir-name]	(删除目录必须加-r)
 
 ### sort
 
-```
+```shell
 sort [file-name]				# 把文件的所有行按照第一列的ASCII码排序
 sort -h [file-name]			# 如果第一列是人类可读的数值，则按照第一列的人类可读数值排序
 sort -k [sort-index] [file-name]		# 按照第 sort-index 列排序
@@ -131,13 +133,15 @@ sort -k 2 [file-name]		# 按照第 2 列排序
 
 ### commit
 
-```
+```shell
 git commit -m [message]			# 提交暂存区到本地仓库中
+git commit -am [message]		# 把修改提交到暂存区，然后把暂存区提交到本地仓库。新增文件不会被提交到暂存区。
+git commit --amend				# 修正最近一次 commit
 ```
 
 ### checkout
 
-```
+```shell
 git checkout <branch-name>		# 切换到分支<branch-name>
 git checkout -b <new-branch-name>	 # 从当前分支创建一个新分支并切换
 git checkout <commit-hash>		# 切换到特定的提交状态，进入"分离头指针"状态，只能查看历史记录，而不能进行分支操作。
@@ -145,7 +149,7 @@ git checkout <commit-hash>		# 切换到特定的提交状态，进入"分离头�
 
 ### push
 
-```
+```shell
 git push <远程主机名> <本地分支名>:<远程分支名>	# 把本地的分支<本地分支名>推送到主机<远程主机名>的分支<远程分支名>上
 git push -u <远程主机名> <本地分支名>		       # 推送的时候设置上游分支，新分支首次推送到远程时使用
 git push origin --delete <branch-name>		  # 删除远程分支 <branch-name>
@@ -156,7 +160,7 @@ git push origin --delete <branch-name>		  # 删除远程分支 <branch-name>
 
 ### branch
 
-```
+```shell
 git branch				# 查看所有本地分支
 git branch -r			# 查看所有远程分支
 git branch -a			# 查看所有本地和远程分支
@@ -166,13 +170,13 @@ git branch -D <branch-name>		# 强制删除本地分支<branch-name>, 忽略任�
 
 ### reset
 
-```
+```shell
 git reset --soft HEAD~1			# 撤销最近一次commit，保留修改
 ```
 
 ### stash
 
-```
+```shell
 git stash				# 临时保存当前工作目录的更改
 git stash list  		# 查看存储的进度
 git stash apply			# 应用最近一次存储的进度
@@ -184,7 +188,7 @@ git stash show -p stash@{0}		# 查看最近一次 stash 的详细内容
 
 ### merge
 
-```
+```shell
 git merge <branch-name>			# 把<branch-name>分支的更改合并到当前分支
 git --no-ff merge <branch-name>		# 禁用快进合并，强制创建一个合并的 commit，保留合并历史
 ```
@@ -197,13 +201,13 @@ fabricmanager下载地址：https://developer.download.nvidia.cn/compute/cuda/re
 
 查看 fabricmanager 版本
 
-```
+```shell
 apt list --installed | grep nvidia-fabricmanager
 ```
 
 卸载旧版本，安装新版本
 
-```
+```shell
 dpkg -r nvidia-fabricmanager-570 		# 卸载旧版本NVIDIA-Fabric Manager
 dpkg -r nvidia-fabricmanager-dev-570    # 卸载旧版本Nvidia-Fabric-Manager-devel
 wget https://developer.download.nvidia.cn/compute/cuda/repos/ubuntu2004/x86_64/nvidia-fabricmanager-550_550.163.01-1_amd64.deb
@@ -212,7 +216,7 @@ dpkg -i nvidia-fabricmanager-550_550.163.01-1_amd64.deb			# 安装目标版本
 
 启动 fabricmanager
 
-```
+```shell
 sudo systemctl enable nvidia-fabricmanager   # 配置Fabric Manager服务随实例开机自启动
 sudo systemctl start nvidia-fabricmanager    # 启动Fabric Manager服务
 sudo systemctl status nvidia-fabricmanager    # 查看Fabric Manager服务是否正常启动，回显active（running）表示启动成功
