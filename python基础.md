@@ -55,11 +55,20 @@ pd.set_option('display.max_colwidth', None)  # 不限制列宽度
 
 ### random.*
 
-<img src="assets\image-20250412015946323.png" alt="image-20250412015946323" style="zoom: 67%;" /> 
+```python
+# 生成[0,1)均匀分布随机数
+np.random.rand(d0,d1,...,dn)
+arr = np.random.rand(5,6,7)
 
-<img src="assets\image-20250412020007619.png" alt="image-20250412020007619" style="zoom:67%;" /> 
+# 生成 N(0,1) 标准正态分布随机数
+np.random.randn(d0,d1,...,dn)
+arr = np.random.randn(5,6,7)
 
-<img src="assets\image-20250412020100739.png" alt="image-20250412020100739" style="zoom:67%;" /> 
+# 生成 [low,high) 随机整数
+np.random.randint(low,high)			# 随机均匀采样一个 [low,high) 之间的整数
+np.random.randint(low,high,size)			# 随机均匀采样一个元素位于 [low,high),形状为 size 的数组
+arr = np.random.randint(0,10,(3,4,5))
+```
 
 <img src="assets\image-20250412020113249.png" alt="image-20250412020113249" style="zoom:67%;" /> 
 
@@ -244,7 +253,27 @@ print(norm.ppf(0.8413, loc=5, scale=2))  # 等价于Z=1时的x值，输出7（�
 
 ## datetime
 
+## warnings
 
+### filterwarnings
+
+```python
+import warnings
+warnings.filterwarnings(action, message="")
+```
+
+- Message 是一个正则表达式，匹配警告消息的开头；不区分大小写。
+- Category 是 Warning 的一个子类，用来指定要作用的警告类型。
+- module 是一个正则表达式，匹配要作用的库的名称。
+
+**Action：**
+
+- "error"：将匹配警告转换成异常。
+- "ignore"：忽略匹配的警告
+- "always"：始终输出匹配的警告
+- "default"：对于同样的警告只输出第一次出现的警告
+- "module"：打印第一次出现的匹配发出警告的每个位置（模块 +行号）的警告
+- "once"：输出第一次出现的警告，而不考虑它们的位置
 
 ## GIL
 
