@@ -136,14 +136,14 @@ $\mathcal{LDN}$：损失函数/样本集/高斯分布
 
 ## 希腊字母
 
-\alpha,  \beta，\gamma，\eta，\tau
+\alpha,  \beta，\gamma，\eta，\tau，\epsilon
 
-$\alpha,\beta,\gamma,\eta,\tau$
+$\alpha,\beta,\gamma,\eta,\tau,\epsilon$
 
-\epsilon，\sigma，\delta，\phi，\pi，\omega
+\sigma，\delta，\phi，\pi，\omega，\psi
 
-$\epsilon,\sigma,\delta,\phi,\pi,\omega$
+$\sigma,\delta,\phi,\pi,\omega,\psi$
 
-\Sigma，\Delta，\Phi，\Pi
+\Sigma，\Delta，\Phi，\Pi，\Omega，\Psi
 
-$\Sigma, \Delta,\Phi,\Pi$
+$\Sigma, \Delta,\Phi,\Pi,\Omega,\Psi$
