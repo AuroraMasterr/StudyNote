@@ -51,30 +51,41 @@ pd.set_option('display.max_colwidth', None)  # 不限制列宽度
 
 ## numpy
 
-<img src="assets\image-20250411025845045.png" alt="image-20250411025845045" style="zoom:67%;" /> 
+```python
+arr = np.array([[-1, 2, 0], [3, 4, -5]])
+arr[arr > 0] = 1
+# arr = [[-1, 1, 0], [1, 1, -5]]
+```
+
+- `arr > 0` 会生成一个和 arr 形状相同的布尔数组，标记每个元素是否大于0
+- `arr[arr > 0] = 1` 会选中所有满足条件的元素，批量赋值为 1 
 
 ### random.*
 
 ```python
+# 设置随机数种子，确保每次运行结果相同
+np.random.seed(seed)
+
 # 生成[0,1)均匀分布随机数
-np.random.rand(d0,d1,...,dn)
-arr = np.random.rand(5,6,7)
+np.random.rand(d0, d1, ..., dn)
+arr = np.random.rand(5, 6, 7)
 
 # 生成 N(0,1) 标准正态分布随机数
-np.random.randn(d0,d1,...,dn)
-arr = np.random.randn(5,6,7)
+np.random.randn(d0, d1, ..., dn)
+arr = np.random.randn(5, 6, 7)
 
 # 生成 [low,high) 随机整数
-np.random.randint(low,high)			# 随机均匀采样一个 [low,high) 之间的整数
-np.random.randint(low,high,size)			# 随机均匀采样一个元素位于 [low,high),形状为 size 的数组
-arr = np.random.randint(0,10,(3,4,5))
+np.random.randint(low, high)			# 随机均匀采样一个整数
+np.random.randint(low, high, size)			# 随机均匀采样一个形状为 size 的数组
+arr = np.random.randint(0, 10, (3,4,5))
+
+# 生成 [low,high) 均匀分布随机数
+np.random.uniform(low, high, size)
+np.random.uniform(1, 2, (2,2,2))
+
+# 生成均值为 loc, 标准差为 scale 的正态分布 N(loc, scale^2) 随机数
+np.random.normal(loc, scale, size) 
 ```
-
-<img src="assets\image-20250412020113249.png" alt="image-20250412020113249" style="zoom:67%;" /> 
-
-<img src="assets\image-20250412020124163.png" alt="image-20250412020124163" style="zoom:67%;" /> 
-
-<img src="assets\image-20250412020156924.png" alt="image-20250412020156924" style="zoom:67%;" /> 
 
 ### full,eye,slices
 
@@ -104,7 +115,14 @@ arr = np.random.randint(0,10,(3,4,5))
 
 ### linalg.norm()
 
-<img src="assets\image-20250410154420046.png" alt="image-20250410154420046" style="zoom:67%;" /> 
+```
+np.linalg.norm(x, ord=None, axis=None, keepdims=False)
+```
+
+- 计算数组的范数，支持向量、矩阵、高维数组
+- ord：范数的阶数，决定计算方式。
+
+<img src="assets/image-20250819175244739.png" alt="image-20250819175244739" style="zoom:67%;" /> 
 
 ### maximum,minimum,fmax
 
@@ -274,6 +292,12 @@ warnings.filterwarnings(action, message="")
 - "default"：对于同样的警告只输出第一次出现的警告
 - "module"：打印第一次出现的匹配发出警告的每个位置（模块 +行号）的警告
 - "once"：输出第一次出现的警告，而不考虑它们的位置
+
+## multiprocessing
+
+```
+
+```
 
 ## GIL
 
