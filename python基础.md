@@ -295,8 +295,36 @@ warnings.filterwarnings(action, message="")
 
 ## multiprocessing
 
+```python
+from multiprocessing import Process, Manager
+def worker_function(shared_dict, key, value):
+    shared_dict[key] = value
+if __name__ == "__main__":
+    with Manager() as manager:
+        shared_dict = manager.dict()			# 通过 Manager() 实现共享内存
+        # 通过 mp.Process 创建多个子进程
+        processes = [Process(target=worker_function, args=(shared_dict, i, i*2)) for i in range(5)]
+        for process in processes:
+            process.start()		# process.start() 启动进程，start 之前进程 pid 为 0，start 之后才分配资源
+        for process in processes:
+            process.join()		# 阻塞主进程，等待子进程执行完毕
+        print("Shared dictionary:", dict(shared_dict))
 ```
 
+## Concurrent
+
+```python
+from concurrent.futures import ProcessPoolExecutor, as_completed
+
+def test(self, value):
+    return value
+   
+with ProcessPoolExecutor(max_workers=10) as executor:
+    futures = []
+    for i in range(10):
+        executor.submit(test, i)
+    for future in tqdm(as_completed(futures), total=len(futures)):
+        value = future.result()
 ```
 
 ## GIL
