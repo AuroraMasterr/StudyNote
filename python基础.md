@@ -12,7 +12,18 @@
 
 ### zip()
 
-<img src="assets\image-20250411021558945.png" alt="image-20250411021558945" style="zoom:67%;" />  
+<img src="assets\image-20250411021558945.png" alt="image-20250411021558945" style="zoom:67%;" />   
+
+### hasattr()
+
+### getattr()
+
+```python
+getattr(a, "attr")							# 获取对象 a 的属性 attr，如果不存在属性 attr 则报错
+getattr(a, "attr", default)			# 如果不存在属性 attr 则返回默认值 default
+```
+
+### setattr()
 
 ## matplotlib
 
@@ -48,6 +59,30 @@ pd.set_option('display.max_columns', None)  # 显示所有列
 pd.set_option('display.width', None)  # 不限制显示宽度
 pd.set_option('display.max_colwidth', None)  # 不限制列宽度
 ```
+
+### sample
+
+```python
+df = df.sample(frac=1, random_state=42)			# 随机采样100%的数据，设置随机种子为42；相当于全部数据随机打乱
+```
+
+### reset_index
+
+```python
+df = df.reset_index(drop=True)		# 把原来的索引扔掉，按照当前顺序重建索引
+df = df.reset_index(drop=False)		# 把原来的索引变成新的一列 index，然后重建索引；如果已经有index列，命名为 level_0 列
+```
+
+### loc/iloc
+
+```python
+df = df.loc[0]				# 选择 index=0 的行
+df = df.iloc[0]				# 选择第 0 行
+df = df.loc[[0,1,2]]			# loc 和 iloc 都支持列表索引
+df = df.iloc[[0,1,2]]
+```
+
+
 
 ## numpy
 
@@ -309,6 +344,20 @@ if __name__ == "__main__":
         for process in processes:
             process.join()		# 阻塞主进程，等待子进程执行完毕
         print("Shared dictionary:", dict(shared_dict))
+```
+
+### manager
+
+```python
+from multiprocessing import Manager
+from ctypes import c_char_p
+
+manager = Manager()
+value_1 = manager.Value('i', 0)					# 'i' 表示整数
+value_2 = manager.Value('d', 0.5)				# 'd' 表示双精度浮点数
+value_3 = manager.Value('f', 0.5)				# 'f' 表示单精度浮点数
+shared_str=manager.Value(c_char_p, "hello")				# 共享 str 需要 c_char_p 类
+arr = manager.Array("i", range(10))			
 ```
 
 ## Concurrent
