@@ -1,6 +1,6 @@
+## 一二元符号
 
-
-## 二元符号
+### 比较符号
 
 远小于：\ll
 
@@ -18,6 +18,8 @@ $\equiv$
 
 $\sim$
 
+### 运算符号
+
 点号：\cdot
 
 $\cdot$
@@ -29,6 +31,12 @@ $\oplus$
 逐元素相乘：\odot
 
 $\odot$
+
+### 一元符号
+
+正负号：\pm
+
+$\pm$
 
 ### 偏序
 
@@ -113,6 +121,85 @@ $\nabla$
 \partial
 
 $\partial$，$\frac{\partial y}{\partial x}$
+
+### 共轭转置
+
+\dagger
+
+$\dagger,A^\dagger$
+
+### 矩阵
+
+无括号矩阵：
+
+\begin{matrix}
+
+a & b & c 
+
+\end{matrix}
+
+$\begin{matrix}
+0 & 1 & 2\\
+1 & 2 & 3
+\end{matrix}$
+
+圆括号矩阵：
+
+\begin{pmatrix}
+
+a & b & c 
+
+\end{pmatrix}
+
+$\begin{pmatrix}
+0 & 1 & 2\\
+1 & 2 & 3
+\end{pmatrix}$
+
+方括号矩阵：
+
+\begin{matrix}
+
+a & b & c 
+
+\end{matrix}
+
+$\begin{bmatrix}
+0 & 1 & 2\\
+1 & 2 & 3
+\end{bmatrix}$
+
+**行列式：**
+
+\begin{vmatrix}
+
+a & b & c 
+
+\end{vmatrix}
+
+$\begin{vmatrix}
+0 & 1 & 2\\
+1 & 2 & 3
+\end{vmatrix}$
+
+### 括号
+
+左部大括号：
+
+\left\\{
+
+xxx = xxx
+
+\right.
+$$
+f(x)=\left\{
+    \begin{align}
+        x&=\cos x	&	x&<1\\
+        y&=\sin x	&	x&<100\\
+        z&=x		&	x&<1000
+    \end{align}
+\right.
+$$
 
 ## 字体
 
