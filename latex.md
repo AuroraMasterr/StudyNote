@@ -38,6 +38,14 @@ $\odot$
 
 $\pm$
 
+任意：\forall
+
+$\forall$
+
+存在：\exists
+
+$\exists$
+
 ### 偏序
 
 偏序小于，按元素小于（preceed）：\prec
@@ -87,6 +95,28 @@ $\rightarrow$
 \longleftrightarrow
 
 $\longleftrightarrow$
+
+### 长等号
+
+等号上写条件：
+
+\xlongequal{xxxxx} 
+
+$f(x)\xlongequal{xxx} x$
+
+### 省略号
+
+横省略号：\dots
+
+$\dots$
+
+竖省略号：\vdots
+
+$\vdots$
+
+斜省略号：\ddots
+
+$\ddots$
 
 ### 等号对齐
 

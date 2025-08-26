@@ -159,6 +159,10 @@ np.linalg.norm(x, ord=None, axis=None, keepdims=False)
 
 <img src="assets/image-20250819175244739.png" alt="image-20250819175244739" style="zoom:67%;" /> 
 
+### linalg.eig()
+
+ <img src="assets/image-20250825013027485.png" alt="image-20250825013027485" style="zoom: 67%;" />
+
 ### maximum,minimum,fmax
 
 <img src="assets\image-20250411025401026.png" alt="image-20250411025401026" style="zoom:67%;" /> 
